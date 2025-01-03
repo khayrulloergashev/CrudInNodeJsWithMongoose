@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "3147dcff-fd0b-4a81-930b-04f25ac39301",
+		"name": "codemy Simple User Crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22809301"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "add New user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Xusrav\",\r\n    \"lastName\":\"Muxtorov\",\r\n    \"email\":\"xusrav@gmail.com\",\r\n    \"dateOfBirth\":\"21-06-2005\",\r\n    \"password\":\"qwerty987\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/users?limit=10&page=1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one user by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/users/6777b66598ada4f75465b393"
+					},
+					"response": []
+				},
+				{
+					"name": "update one user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Xayrullo\",\r\n    \"lastName\":\"Ergashev\",\r\n    \"email\":\"xayrullodev@gmail.com\",\r\n    \"dateOfBirth\":\"05-05-2005\",\r\n    \"password\":\"qwerty111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/users/6777b66598ada4f75465b393"
+					},
+					"response": []
+				},
+				{
+					"name": "delete one user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/users/6777b66598ada4f75465b393"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}
