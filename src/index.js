@@ -31,6 +31,14 @@ mongoose
 
 app.use("/api", appRouter);
 
+const root = path.join(__dirname, "../public/build");
+
+app.use(express.static(root));
+
+app.get("/*", (req, res) => {
+  res.sendFile("index.html", { root });
+});
+
 app.listen(port, () => {
   console.log(`Server started on port : ${port}`);
 });
