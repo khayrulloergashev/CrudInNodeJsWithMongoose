@@ -1,6 +1,7 @@
 This is user model
 
 {
+    
     firstName: { type: String, minlength: 2, maxlength: 200, required: true },
     
     lastName: { type: String, minlength: 2, maxlength: 200 },
